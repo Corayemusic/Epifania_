@@ -1,0 +1,83 @@
+---
+import CompatibilityList from "~/components/compatibility-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { CompatibilityItem } from "~/types";
+
+const frameworks: Array<CompatibilityItem> = [
+  {
+    title: "Facebook",
+    icon: "frameworks/react",
+    url: "https://www.facebook.com/groups/epifaniapsicodrama/",
+  },
+  {
+    title: "Linkedin",
+    icon: "frameworks/preact",
+    url: "https://www.linkedin.com/company/epifania-psicodrama/",
+  },
+  {
+    title: "Whatsapp",
+    icon: "frameworks/svelte",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "Instagram",
+    icon: "frameworks/vue",
+    url: "https://www.instagram.com/epifaniapsicodrama/",
+  },
+  {
+    title: "Youtube",
+    icon: "frameworks/solid",
+    url: "https://www.youtube.com/@epifaniapsicodrama/",
+  },
+  {
+    title: "Lit",
+    icon: "frameworks/lit",
+    url: "https://lit.dev/",
+  },
+];
+const platforms: Array<CompatibilityItem> = [
+
+  {
+    title: "Netlify",
+    icon: "platforms/netlify",
+    url: "https://www.netlify.com/",
+  },
+  {
+    title: "Vercel",
+    icon: "platforms/vercel",
+    url: "https://vercel.com/",
+  },
+  {
+    title: "Cloudflare",
+    icon: "fa-brands:cloudflare",
+    url: "https://pages.cloudflare.com/",
+  },
+  {
+    title: "Render",
+    icon: "platforms/render",
+    url: "https://render.com/",
+  },
+  {
+    title: "GitHub",
+    icon: "fa-brands:github",
+    url: "https://pages.github.com/",
+  },
+  {
+    title: "GitLab",
+    icon: "fa-brands:gitlab",
+    url: "https://docs.gitlab.com/ee/user/project/pages/",
+  },
+];
+---
+
+<ContentSection title="Compatibility" id="compatibility">
+  <Fragment slot="lead">
+     Creamos diseños personalizados: Atención Online, presencial e híbrido.
+  </Fragment>
+  <CompatibilityList
+    items={frameworks}
+    title="Frameworks"
+    url="https://docs.astro.build/core-concepts/framework-components/"
+  />
+ 
+</ContentSection>

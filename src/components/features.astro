@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+
+const features: Array<FeatureItem> = [
+  {
+    title: "PSICODRAMA PSICOTERAPÉUTICO",
+    description:
+      "Psicodrama bipersonal,Psicodrama grupal,Propósito de vida,Fortalecimiento de creatividad,Gestión de las emociones,Estrategias para la auto- observación, Entrenamiento de habilidades intra e interpersonalesCrecimiento interior,21 aptitudes de inteligencia espiritual,Conocimiento ego/Yo Superior,Libertad existencial, Equilibrio cuerpo, mente y espírit",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "PSICODRAMA PEDAGÓGICO",
+    description:
+      "Compartir el método en espacios de aprendizaje.Seminarios y talleres temáticos. Debates, dramatizaciones y reflexión grupal.Intervención en grupalidad .Role playing, silla vacía y técnica del espejo.Filosofía y técnicas del psicodrama.Aprendizaje experiencial y vivencial.Para profesionales de la salud, holísticos, etc. Enfocado a personas que trabajan conteniendo la vulnerabilidad de otres. Encuentros de “cuidado para cuidadores”. Herramientas creativas para psicoterapeutas. Intercambio de material bibliográfico",
+    icon: "mdi:feather",
+  },
+  {
+    title: "PSICODRAMA ORGANIZACIONAL",
+    description:
+      "Autogestión y habilidades colaborativas,Propósito organizacional,Test sociométrico y sociometría,Creación de equipos de trabajo,Visión vincular del equipo laboral.Creatividad vincular en ámbito laboral. Fortalecimiento de equipos multilocales.Encuentro para el cuidado institucional. Cuidado de cuidadores y prevención del burnout. Prevención de riesgos psicosociales.",
+    icon: "mdi:directions-fork",
+  },
+  {
+    title: "SOCIOPSICODRAMA",
+    description:
+      "Fortalecimiento del grupo. Sensibilización y empatía. Redes de trabajo. Dinámicas creativas grupales. Comunidades de aprendizaje. Cartografía social . Detección de tensiones comunitarias. Identificación de soluciones comunitarias. Prevención de consumos problemáticos. Diseño de entregables interactivos.",
+    icon: "mdi:graph",
+
+  },
+];
+---
+
+<ContentSection title="Servicios" id="features">
+  <Fragment slot="lead">
+    Aspiramos a  <span class="text-primary">fortalecer:</span> la salud vincular, la inteligencia espiritual y el bienestar laboral de todas las personas, grupos y organizaciones. 
+   
+ 
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} class="size-full" />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
+
