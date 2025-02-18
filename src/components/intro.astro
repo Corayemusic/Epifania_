@@ -1,19 +1,19 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import ContentSection from "~/components/content-section.astro";
+export const title = "¿CÓMO PODEMOS ACOMPAÑAR A TU ORGANIZACIÓN?";
+export const id = "intro";
+export const className = "text-xs sm:text-sm mx-4 sm:mx-6 my-10 sm:my-12";
 ---
 
-<ContentSection 
-  title="¿CÓMO PODEMOS ACOMPAÑAR A TU ORGANIZACIÓN?" 
-  id="intro" 
-  class="text-xs sm:text-sm mx-4 sm:mx-6 my-10 sm:my-12"
-
->
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
-  <Fragment slot="lead">
+<section id={id} class={className}>
+  <div class="container mx-auto px-4">
+    <div class="text-center">
+      <Icon slot="eyebrow" name="logomark" class="size-32 mx-auto" />
+      <h2 class="text-2xl sm:text-4xl font-bold mt-4">{title}</h2>
+    </div>
     <div class="mt-6 mb-6 space-y-6">
-      Creemos esencial para el desarrollo profundo de los equipos autogestionados y colaborativos lo siguiente:
+      <p>Creemos esencial para el desarrollo profundo de los equipos autogestionados y colaborativos lo siguiente:</p>
       <ul class="list-disc pl-8 space-y-4">
         <li>
           Aplicar diversas metodologías para crear en colectivo hábitos personales de autoobservación y autoexploración para la transformación, así como el uso del psicodrama, sociopsicodrama e inteligencia espiritual.
@@ -35,22 +35,21 @@ import ContentSection from "~/components/content-section.astro";
         Te ayudamos al <span class="text-primary">BIENESTAR</span> personal, social y organizacional desde la <span class="text-primary">CREATIVIDAD</span>.
       </p>
     </div>
-  </Fragment>
-
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-    <a
-      href="https://docs.astro.build/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
-    >
-      <Icon name="mdi:telescope" class="size-8" />
-      <span>Read the docs</span>
-    </a>
-    <a
-      href="https://astro.new/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
-    >
-      <Icon name="mdi:rocket" class="size-8" />
-      <span>Try it out</span>
-    </a>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        href="https://docs.astro.build/"
+        class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      >
+        <Icon name="mdi:telescope" class="size-8" />
+        <span>Read the docs</span>
+      </a>
+      <a
+        href="https://astro.new/"
+        class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      >
+        <Icon name="mdi:rocket" class="size-8" />
+        <span>Try it out</span>
+      </a>
+    </div>
   </div>
-</ContentSection>
+</section>
