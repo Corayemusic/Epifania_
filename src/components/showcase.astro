@@ -4,6 +4,14 @@ import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
 import PsicodramaSection from '~/components/PsicodramaSection.astro';
 import TestimonialSection from "~/components/TestimonialSection.astro";
+import TestimonialSection2 from "~/components/TestimonialSection2.astro";
+import TestimonialSection3 from "~/components/TestimonialSection3.astro";
+import TestimonialSection4 from "~/components/TestimonialSection4.astro";
+import PsicodramaPedagogico from '~/components/Psicodramapedagogico.astro';
+import PasocodramaOrganizacional from '~/components/pasocodrama-organizacional.astro';
+import Sociopsicodrama from '~/components/sociopsicodrama.astro';
+
+
 
 
 const featuredSites = await getCollection(
@@ -17,6 +25,12 @@ const orderedSites = featuredSites.sort(
 
 <PsicodramaSection />
 <TestimonialSection />
+<PsicodramaPedagogico />
+<TestimonialSection2 />
+<PasocodramaOrganizacional />
+<TestimonialSection3 />
+<TestimonialSection4 />
+<Sociopsicodrama />
 <ContentSection title="Videos" id="showcase">
   <Fragment slot="lead">
     Hablamos sobre <span class="text-primary">psicodrama</span>{" "}
