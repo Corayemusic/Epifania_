@@ -4,6 +4,7 @@ import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
 import PsicodramaSection from '~/components/PsicodramaSection.astro';
 import TestimonialSection from "~/components/TestimonialSection.astro";// Cambia por la ruta correcta de tu imagen.
+import TestimonialSection from "~/components/TestimonialSection.astro";
 
 const featuredSites = await getCollection(
   "showcase",
@@ -13,6 +14,7 @@ const orderedSites = featuredSites.sort(
   (a, b) => a.data.featured! - b.data.featured!,
 );
 ---
+<TeamSection />
 <PsicodramaSection />
 <TestimonialSection />
 <ContentSection title="Videos" id="showcase">
