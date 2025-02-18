@@ -1,8 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import EfiImage from "~/assets/Efi3.jpeg";
+import NellyImage from "~/assets/Nelly.jpg";
+
 const teamMembers = [
   {
     name: 'Efi',
-    image: '/assets/Efi3.jpeg',
+    image: EfiImage,
     description: 'Psicóloga especializada en salud emocional.',
     facebook: 'https://facebook.com/efi',
     linkedin: 'https://linkedin.com/in/efi',
@@ -10,7 +14,7 @@ const teamMembers = [
   },
   {
     name: 'Nelly',
-    image: '/assets/Nelly.jpg',
+    image: NellyImage,
     description: 'Antropóloga con enfoque en salud social.',
     facebook: 'https://facebook.com/nelly',
     linkedin: 'https://linkedin.com/in/nelly',
@@ -28,7 +32,7 @@ const teamMembers = [
     <div class="grid gap-8 sm:grid-cols-2">
       {teamMembers.map((member) => (
         <div key={member.name} class="overflow-hidden rounded-lg shadow-lg text-center">
-          <img src={member.image} alt={`Foto de ${member.name}`} class="w-32 h-32 rounded-full mx-auto mt-4 object-cover" />
+          <Image src={member.image} alt={`Foto de ${member.name}`} class="w-32 h-32 rounded-full mx-auto mt-4 object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-bold mb-2">{member.name}</h3>
             <p>{member.description}</p>
