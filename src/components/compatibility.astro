@@ -36,7 +36,6 @@ const frameworks: Array<CompatibilityItem> = [
   },
 ];
 const platforms: Array<CompatibilityItem> = [
-
   {
     title: "Netlify",
     icon: "platforms/netlify",
@@ -79,5 +78,9 @@ const platforms: Array<CompatibilityItem> = [
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
   />
- 
+  <CompatibilityList
+    items={platforms}
+    title="Platforms"
+    url="https://docs.astro.build/core-concepts/deployments/"
+  />
 </ContentSection>
