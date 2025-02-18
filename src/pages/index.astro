@@ -36,6 +36,12 @@ const description =
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
     <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
@@ -66,7 +72,6 @@ const description =
     <Header />
     <Splash />
     <div class="space-y-24 px-8 py-32">
-
       <Features />
       <TeamSection />
       <Intro />
