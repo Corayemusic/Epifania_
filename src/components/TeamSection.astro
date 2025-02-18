@@ -29,7 +29,7 @@ const teamMembers = [
     <p class="text-center max-w-3xl mx-auto mb-12">
       Somos un colectivo de profesionales dedicados a diversas ramas de la salud emocional, social y organizacional. Brindamos un acompañamiento cercano, profesional e íntegro a las personas.
     </p>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 justify-center sm:grid-cols-2 lg:grid-cols-3">
       {teamMembers.map((member) => (
         <div key={member.name} class="overflow-hidden rounded-lg shadow-lg text-center max-w-xs mx-auto">
           <Image src={member.image} alt={`Foto de ${member.name}`} class="w-24 h-24 rounded-full mx-auto mt-4 object-cover" />
