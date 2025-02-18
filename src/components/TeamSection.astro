@@ -5,7 +5,7 @@ import NellyImage from "~/assets/Nelly.jpg";
 
 const teamMembers = [
   {
-    name: 'Psic. Efi Bezi (Argentina)',
+    name: 'Efi',
     image: EfiImage,
     description: 'Psicóloga especializada en salud emocional.',
     facebook: 'https://facebook.com/efi',
@@ -13,7 +13,7 @@ const teamMembers = [
     instagram: 'https://instagram.com/efi'
   },
   {
-    name: 'Dra. Nelly López Azuz (México)',
+    name: 'Nelly',
     image: NellyImage,
     description: 'Antropóloga con enfoque en salud social.',
     facebook: 'https://facebook.com/nelly',
@@ -29,13 +29,13 @@ const teamMembers = [
     <p class="text-center max-w-3xl mx-auto mb-12">
       Somos un colectivo de profesionales dedicados a diversas ramas de la salud emocional, social y organizacional. Brindamos un acompañamiento cercano, profesional e íntegro a las personas.
     </p>
-    <div class="grid gap-8 sm:grid-cols-2">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {teamMembers.map((member) => (
-        <div key={member.name} class="overflow-hidden rounded-lg shadow-lg text-center">
-          <Image src={member.image} alt={`Foto de ${member.name}`} class="w-32 h-32 rounded-full mx-auto mt-4 object-cover" />
-          <div class="p-6">
+        <div key={member.name} class="overflow-hidden rounded-lg shadow-lg text-center max-w-xs mx-auto">
+          <Image src={member.image} alt={`Foto de ${member.name}`} class="w-24 h-24 rounded-full mx-auto mt-4 object-cover" />
+          <div class="p-4">
             <h3 class="text-xl font-bold mb-2">{member.name}</h3>
-            <p>{member.description}</p>
+            <p class="text-sm">{member.description}</p>
             <div class="mt-4 flex justify-center space-x-4">
               <a href={member.facebook} target="_blank" rel="noopener noreferrer" class="text-blue-600">
                 <i class="fab fa-facebook-f"></i>
