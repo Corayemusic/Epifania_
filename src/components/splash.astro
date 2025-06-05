@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logomark1 from "~/assets/logomark-1.svg";
+import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
@@ -27,7 +31,7 @@ import GitHubCorner from "./github-corner.astro";
     </h3>
     <div
       id="astronaut"
-      class="w-1/2 max-w-md self-start sm:w-1/2 sm:self-auto sm:justify-self-start rotate-12"
+      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
     >
       <Image
         class="h-full w-full object-cover"
@@ -66,15 +70,15 @@ import GitHubCorner from "./github-corner.astro";
 
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
-      animation: none !important;
+      @apply animate-none;
     }
 
     :global(#starfield) {
-      display: none !important;
+      @apply hidden;
     }
 
     #splash-bg-fallback {
-      display: block !important;
+      @apply block;
     }
   }
 </style>
