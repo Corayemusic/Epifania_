@@ -1,7 +1,14 @@
-<div id="starfield" class="absolute inset-0">
+<div id="starfield" class="absolute inset-0 flex items-center justify-center">
+  <!-- Imagen para escritorio (sm y superior), recortada como fondo -->
   <img 
     src="Foto1.jpeg" 
-    alt="Sesión de fotos Fausto Jijón Quelal" 
-    class="w-full h-full object-cover"
+    alt="Sesión de fotos Fausto Jijón Quelal (escritorio)" 
+    class="hidden sm:block w-full h-full object-cover"
+  />
+  <!-- Imagen para móvil (xs hasta <sm), se ve entera -->
+  <img 
+    src="Foto2.jpeg" 
+    alt="Sesión de fotos Fausto Jijón Quelal (móvil)" 
+    class="block sm:hidden w-full h-full object-contain"
   />
 </div>
