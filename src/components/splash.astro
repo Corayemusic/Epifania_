@@ -32,7 +32,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     </h3>
     <div
       id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+      class="w-2/3 max-w-3xl self-start sm:w-8/12 sm:self-auto sm:justify-self-start"
     >
       <Image
         class="h-full w-full object-cover"
@@ -71,15 +71,15 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
-      @apply animate-none;
+      animation: none !important;
     }
 
     :global(#starfield) {
-      @apply hidden;
+      display: none !important;
     }
 
     #splash-bg-fallback {
-      @apply block;
+      display: block !important;
     }
   }
 </style>
