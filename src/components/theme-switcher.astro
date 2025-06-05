@@ -1,25 +1,23 @@
 ---
 import { Icon } from "astro-icon/components";
 ---
-
-<!--
-  negative margin is sum of button width (6) and gap size of flex parent (6)
-  TODO don't hardcode these values
--->
-<button
-  id="theme-switcher"
-  type="button"
-  class="-ml-12 origin-[right_center] scale-0 transition-all duration-500"
->
-  <div id="icon-theme-light">
-    <Icon name="mdi:white-balance-sunny" class="size-6" />
-    <span class="sr-only">Use light theme</span>
-  </div>
-  <div id="icon-theme-dark" class="hidden">
-    <Icon name="mdi:weather-night" class="size-6" />
-    <span class="sr-only">Use dark theme</span>
-  </div>
-</button>
+<!-- MENÚ FIJO ARRIBA -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black flex items-center justify-end p-4">
+  <button
+    id="theme-switcher"
+    type="button"
+    class="-ml-12 origin-[right_center] scale-0 transition-all duration-500"
+  >
+    <div id="icon-theme-light">
+      <Icon name="mdi:white-balance-sunny" class="size-6" />
+      <span class="sr-only">Use light theme</span>
+    </div>
+    <div id="icon-theme-dark" class="hidden">
+      <Icon name="mdi:weather-night" class="size-6" />
+      <span class="sr-only">Use dark theme</span>
+    </div>
+  </button>
+</nav>
 
 <script>
   import invariant from "tiny-invariant";
@@ -58,6 +56,7 @@ import { Icon } from "astro-icon/components";
 </script>
 
 <style>
+  /* Si usas .fixed-header en otras partes, puedes seguir usando este CSS */
   :global(.fixed-header) #theme-switcher {
     @apply ml-0 scale-100;
   }
