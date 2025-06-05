@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import logomark1 from "~/assets/logomark-1.svg";
+import { Icon } from "astro-icon/components";
+import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -9,24 +10,29 @@ const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<!--
-  <Icon name="logomark" class="size-20 text-white md:size-32" />
-  Conecta
-  con tu
-  humanidad.
--->
-
 <section class="relative h-full bg-black">
   <Starfield />
   <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
-  <!-- Flex con justify-end y un margin-right automático para separarlo del borde derecho -->
-  <div class="w-full flex items-center justify-end h-[60vh] sm:h-[70vh] md:h-[80vh]">
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h3
+      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end invisible"
+      aria-hidden="true"
+    >
+      <Icon name="logomark" class="size-20 text-white md:size-32" />
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-4xl md:text-6xl"
+      >
+        Conecta
+        <br /> con tu
+        <br /> humanidad.
+      </div>
+    </h3>
     <div
       id="astronaut"
-      class="w-20 sm:w-28 md:w-36 max-w-xs mr-auto md:mr-32 sm:mr-20"
+      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
     >
       <Image
         class="h-full w-full object-cover"
@@ -53,23 +59,27 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     0% {
       transform: translate3d(0, 0, 0);
     }
+
     100% {
       transform: translate3d(0, 30px, 0);
     }
   }
+
   #astronaut {
     animation: float linear 2.5s infinite alternate;
   }
+
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
-      animation: none !important;
+      @apply animate-none;
     }
+
     :global(#starfield) {
-      display: none !important;
+      @apply hidden;
     }
+
     #splash-bg-fallback {
-      display: block !important;
+      @apply block;
     }
   }
 </style>
-
