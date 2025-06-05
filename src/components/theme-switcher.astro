@@ -1,64 +1,25 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import TestimonialImage from "~/assets/mariano.jpeg"; // Cambia por la ruta correcta de tu imagen.
 ---
 
-<!--
-  negative margin is sum of button width (6) and gap size of flex parent (6)
-  TODO don't hardcode these values
--->
-<button
-  id="theme-switcher"
-  type="button"
-  class="-ml-12 origin-[right_center] scale-0 transition-all duration-500"
->
-  <div id="icon-theme-light">
-    <Icon name="mdi:white-balance-sunny" class="size-6" />
-    <span class="sr-only">Use light theme</span>
+<section class="relative bg-[#560576] text-white px-8 py-16 sm:px-16 sm:py-24">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+      <h3 class="inline-block">&ldquo;</h3> {/* Modificado para ser h3 */}
+    </div>
+    <p class="text-sm sm:text-base leading-relaxed">
+      La experiencia del psicodrama fue increíble. Tuve la oportunidad de poder vivenciar cómo poder entrar en un sistema distinto al mío aún cuando pertenezco a ese sistema. Me gustó la posibilidad de compartir, de ver cómo transita en mi cuerpo lo que estoy vivenciando, cómo puedo manifestarlo de una manera que no sea lineal o que no sea mental, es decir, con palabras que nazcan directamente de un pensamiento sino sobre lo que me está pasando por el cuerpo en ese momento. Creo que fue una experiencia mágica tanto la facilitación como todo lo que se logró. Superó mis expectativas y también el tener la capacidad de observar al resto del sistema y a ese contexto en la medida que se manifiestan con sus necesidades, con sus exponencias, con sus grandes posibilidades.
+    </p>
+    <div class="mt-8">
+      <Image
+        src={TestimonialImage}
+        alt="Mariano Carniel"
+        class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white object-cover"
+      />
+      <h3 class="text-lg font-semibold">MARIANO CARNIEL</h3>
+      <p class="text-sm">Conector y facilitador de Impacto</p>
+      <p class="text-sm">Michoacán, México</p>
+    </div>
   </div>
-  <div id="icon-theme-dark" class="hidden">
-    <Icon name="mdi:weather-night" class="size-6" />
-    <span class="sr-only">Use dark theme</span>
-  </div>
-</button>
-
-<script>
-  import invariant from "tiny-invariant";
-
-  const themes = ["light", "dark"];
-  const button = document.querySelector("#theme-switcher");
-  invariant(button, "button should not be null");
-
-  const getThemeCurrent = () => document.documentElement.dataset.theme;
-  const getThemeNext = () => {
-    const themeCurrent = getThemeCurrent();
-    invariant(themeCurrent, "themeCurrent should not be undefined");
-    const indexThemeCurrent = themes.indexOf(themeCurrent);
-    return themes[(indexThemeCurrent + 1) % themes.length];
-  };
-
-  const updateIcon = () => {
-    const themeCurrent = getThemeCurrent();
-    document
-      .querySelector(`#icon-theme-${themeCurrent}`)
-      ?.classList.add("hidden");
-    const themeNext = getThemeNext();
-    document
-      .querySelector(`#icon-theme-${themeNext}`)
-      ?.classList.remove("hidden");
-  };
-
-  button.addEventListener("click", () => {
-    const themeNext = getThemeNext();
-    document.documentElement.dataset.theme = themeNext;
-    localStorage.setItem("theme", themeNext);
-    updateIcon();
-  });
-
-  updateIcon();
-</script>
-
-<style>
-  :global(.fixed-header) #theme-switcher {
-    @apply ml-0 scale-100;
-  }
-</style>
+</section>
