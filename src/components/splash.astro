@@ -1,13 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
+import logomark1 from "~/assets/logomark-1.svg";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
-
-const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
@@ -29,16 +25,13 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         <br /> humanidad.
       </div>
     </h3>
-        <div
+    <div
       id="astronaut"
-      class="relative w-1/2 max-w-md self-start sm:w-1/2 sm:self-auto sm:justify-self-start rotate-12 translate-x-10 -translate-y-6"
+      class="relative w-1/3 max-w-xs self-start sm:justify-self-start rotate-12 translate-x-16 -translate-y-8"
     >
-      <Image
+      <img
         class="h-full w-full object-cover"
-        src={logomark1}
-        widths={widths}
-        sizes={sizes}
-        loading="eager"
+        src={logomark1.src}
         alt="Logomark principal"
       />
     </div>
@@ -70,15 +63,15 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
-      @apply animate-none;
+      animation: none !important;
     }
 
     :global(#starfield) {
-      @apply hidden;
+      display: none !important;
     }
 
     #splash-bg-fallback {
-      @apply block;
+      display: block !important;
     }
   }
 </style>
