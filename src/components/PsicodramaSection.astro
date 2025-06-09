@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import astronautImage from '../assets/psicodrama.png';
+import astronautImage from '../assets/psicodrama.png'; // Ruta de la imagen en la carpeta assets
 
 const title = "PSICODRAMA PSICOTERAPÉUTICO E INTELIGENCIA ESPIRITUAL";
 const description = `
@@ -21,23 +21,25 @@ const workshop = {
   modality: "Presencial o vía ZOOM.",
 };
 
-const widths = [320, 640, 1280];
-const sizes = '(max-width: 768px) 100vw, 50vw';
+const widths = [320, 640, 1280]; // Resoluciones deseadas
+const sizes = '(max-width: 768px) 100vw, 50vw'; // Configuración responsiva
 ---
 
 <section class="space-y-8 px-4 md:px-8">
   <h2 class="text-2xl font-bold text-center text-primary">{title}</h2>
-  <p class="text-lg text-center max-w-prose mx-auto text-black dark:text-white">{description}</p>
+  <p class="text-lg text-center max-w-prose mx-auto text-default">{description}</p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="space-y-6 md:pl-6">
+    <!-- Contenedor del texto -->
+    <div class="space-y-6 md:pl-6"> <!-- Usamos padding-left para margen interno en pantallas medianas -->
       <h3 class="text-2xl font-semibold text-primary">{workshop.title}</h3>
       <p><span class="font-bold">Objetivo:</span> {workshop.objective}</p>
       <p><span class="font-bold">Dirigido:</span> {workshop.audience}</p>
       <p><span class="font-bold">Duración:</span> {workshop.duration}</p>
       <p><span class="font-bold">Modalidad:</span> {workshop.modality}</p>
     </div>
-    <div class="md:pr-6">
+    <!-- Contenedor de la imagen -->
+    <div class="md:pr-6"> <!-- Usamos padding-right para margen interno en pantallas medianas -->
       <Image
         class="h-full w-full object-cover rounded-lg shadow-lg"
         src={astronautImage}
