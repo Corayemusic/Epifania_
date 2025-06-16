@@ -10,27 +10,13 @@ const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<section class="relative bg-black">
+<section class="relative h-full bg-black">
   <Starfield />
   <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
-  <div class="relative grid items-start justify-items-center sm:items-center sm:grid-cols-2">
-    <div
-      id="astronaut"
-      class="w-2/3 max-w-3xl sm:w-8/12 sm:self-auto sm:justify-self-start"
-      style="margin-top:0;padding-top:0;"
-    >
-      <Image
-        class="h-full w-full object-cover"
-        src={logomark1}
-        widths={widths}
-        sizes={sizes}
-        loading="eager"
-        alt="Logomark principal"
-      />
-    </div>
+  <div class="relative grid h-full items-start justify-items-center sm:items-center sm:grid-cols-2">
     <h3
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end invisible"
       aria-hidden="true"
@@ -44,6 +30,19 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         <br /> humanidad.
       </div>
     </h3>
+    <div
+      id="astronaut"
+      class="w-2/3 max-w-3xl self-start sm:w-8/12 sm:self-auto sm:justify-self-start mt-8 sm:mt-0"
+    >
+      <Image
+        class="h-full w-full object-cover"
+        src={logomark1}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Logomark principal"
+      />
+    </div>
   </div>
 </section>
 
@@ -61,21 +60,5 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translate3d(0, 30px, 0);
-    }
-  }
-  #astronaut {
-    animation: float linear 2.5s infinite alternate;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    #astronaut {
-      animation: none !important;
-    }
-    :global(#starfield) {
-      display: none !important;
-    }
-    #splash-bg-fallback {
-      display: block !important;
-    }
-  }
-</style>
+      transform: translate3d(0, 
+
