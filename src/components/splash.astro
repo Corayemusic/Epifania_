@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logomark1 from "~/assets/logomark-1.svg";
+import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -16,7 +16,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
-  <div class="relative grid h-full items-start justify-items-center sm:items-center sm:grid-cols-2">
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
     <h3
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end invisible"
       aria-hidden="true"
@@ -32,7 +32,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     </h3>
     <div
       id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-8/12 sm:self-auto sm:justify-self-start mt-8 sm:mt-0"
+      class="w-2/3 max-w-3xl self-start sm:w-8/12 sm:self-auto sm:justify-self-start"
     >
       <Image
         class="h-full w-full object-cover"
@@ -59,6 +59,27 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     0% {
       transform: translate3d(0, 0, 0);
     }
-    100% {
-      transform: translate3d(0, 
 
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #astronaut {
+      animation: none !important;
+    }
+
+    :global(#starfield) {
+      display: none !important;
+    }
+
+    #splash-bg-fallback {
+      display: block !important;
+    }
+  }
+</style>
