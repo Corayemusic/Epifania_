@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
+import logomark1 from "~/assets/logomark-1.svg";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -67,6 +67,13 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
   #astronaut {
     animation: float linear 2.5s infinite alternate;
+  }
+
+  /* Subir el logomark 3cm en móviles */
+  @media (max-width: 639px) {
+    #astronaut {
+      margin-top: -3cm;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
