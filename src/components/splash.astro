@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import logomark1 from "~/assets/logomark-1.svg"; // Cambiado aquí
+import logomark1 from "~/assets/logomark-1.svg";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -59,25 +59,20 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     0% {
       transform: translate3d(0, 0, 0);
     }
-
     100% {
       transform: translate3d(0, 30px, 0);
     }
   }
-
   #astronaut {
     animation: float linear 2.5s infinite alternate;
   }
-
   @media (prefers-reduced-motion: reduce) {
     #astronaut {
       animation: none !important;
     }
-
     :global(#starfield) {
       display: none !important;
     }
-
     #splash-bg-fallback {
       display: block !important;
     }
