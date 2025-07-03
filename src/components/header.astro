@@ -14,10 +14,16 @@ const navItems: Array<NavItem> = [
   id="page-header"
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
+  <a class="flex items-center gap-6 hover:!text-default" href="#">
     <h1 class="sr-only">EpifaníaPsicodrama</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <span class="flex items-center gap-1">
+      <Icon name="logomark" class="size-10" />
+      <span class="text-sm">Argentina</span>
+    </span>
+    <span class="hidden sm:flex items-center gap-1">
+      <Icon name="wordmark" class="h-4" />
+      <span class="text-sm">Mexico</span>
+    </span>
   </a>
   <div>
     <div class="flex items-center gap-6">
